@@ -7,9 +7,5 @@ docker compose --env-file .docker.env up -d
 
 ## Usage
 ```shell
-curl --location 'http://localhost:9000/store' \                    
---header 'Content-Type: application/json' \
---data '{
-    "id": "someId", "foo": "bar"
-}'
+curl -d '{"id": "someId", "foo": "bar"}' -H 'Content-Type: application/json' -X POST 'http://localhost:9000/store'
 ```
